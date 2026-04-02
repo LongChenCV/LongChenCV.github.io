@@ -1,79 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Long Chen</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 20px;
-      line-height: 1.7;
-      color: #222;
-    }
-    nav {
-      margin-bottom: 30px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #ddd;
-    }
-    nav a {
-      margin-right: 20px;
-      text-decoration: none;
-      color: #0056b3;
-    }
-    h1, h2 {
-      color: #111;
-    }
-    .section {
-      margin-bottom: 35px;
-    }
-    ul {
-      padding-left: 20px;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Long Chen</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 40px;
+  background: #f7f7f7;
+}
+
+/* 整体布局 */
+.container {
+  display: flex;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* 左侧栏 */
+.sidebar {
+  width: 280px;
+  margin-right: 40px;
+}
+
+/* 头像 */
+.avatar {
+  width: 180px;
+  border-radius: 50%;
+}
+
+/* 名字 */
+.name {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* 信息 */
+.info {
+  color: #555;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+/* 右侧内容 */
+.main {
+  flex: 1;
+}
+
+/* 标题 */
+h2 {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+</style>
 </head>
+
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="profile.html">Profile</a>
-    <a href="publications.html">Publications</a>
-    <a href="contact.html">Contact</a>
-  </nav>
 
-  <div class="section">
-    <h1>Long Chen</h1>
-    <p>
-      I am interested in spiking neural networks, multimodal learning,
-      underwater object detection, and efficient vision models.
-    </p>
+<div class="container">
+
+  <!-- 左侧 -->
+  <div class="sidebar">
+    <img src="https://via.placeholder.com/180" class="avatar">
+
+    <div class="name">Long Chen</div>
+
+    <div class="info">
+      Researcher in AI<br>
+      Spiking Neural Networks<br>
+      Multimodal Learning<br><br>
+
+      📍 Your University<br>
+      📧 your@email.com<br>
+      💻 <a href="https://github.com/LongChenCV">GitHub</a>
+    </div>
   </div>
 
-  <div class="section">
-    <h2>About Me</h2>
-    <p>
-      Welcome to my academic homepage. Here you can find my research interests,
-      publications, projects, and contact information.
-    </p>
-  </div>
+  <!-- 右侧 -->
+  <div class="main">
 
-  <div class="section">
-    <h2>Recent News</h2>
+    <h2>⭐ News</h2>
     <ul>
-      <li>2025/08 -- Homepage launched on GitHub Pages.</li>
-      <li>2025/07 -- Working on multimodal spiking neural networks.</li>
-      <li>2025/06 -- Updating research projects and publication list.</li>
+      <li>2026 - Homepage launched</li>
+      <li>2025 - Working on MMSNN</li>
     </ul>
+
+    <h2>Bio</h2>
+    <p>
+      I am working on spiking neural networks, multimodal fusion,
+      and underwater object detection.
+    </p>
+
+    <h2>Projects</h2>
+    <ul>
+      <li>MMSNN for underwater detection</li>
+      <li>Spike-driven attention model</li>
+    </ul>
+
   </div>
 
-  <div class="section">
-    <h2>Selected Projects</h2>
-    <ul>
-      <li>MMSNN for underwater object detection</li>
-      <li>Spike-driven multi-axis self-attention model</li>
-      <li>Multimodal feature fusion with deepLBP and deepRGB</li>
-    </ul>
-  </div>
+</div>
+
 </body>
 </html>
