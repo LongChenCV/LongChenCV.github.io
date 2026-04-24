@@ -240,6 +240,10 @@ body {
   gap: 18px;
 }
 
+.colead-grid {
+  grid-template-columns: 1fr;
+}
+
 .project-card {
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -258,11 +262,6 @@ body {
   font-size: 18px;
 }
 
-.group-title {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
   
 .project-card p {
   margin: 0 0 10px 0;
@@ -416,7 +415,33 @@ My research explores efficient, robust, and intelligent visual perception models
       
     </section>
 
- <section class="section" id="projects">
+  <section class="section" id="research-groups">
+    <h2>Co-Lead Research Groups</h2>
+  
+    <div class="project-grid colead-grid">
+  
+      <div class="project-card">
+        <h3 class="group-title">Brain-Inspired Computing Group (Co-Led with Prof. Qi Xu)</h3>
+        <p>
+          <span class="highlight">Spiking Neural Networks:</span> Focuses on efficient learning, low-energy visual perception, and neuromorphic computing.
+          <span class="highlight">Efficient AI:</span> Explores model pruning, compression, and lightweight architectures for deployment in resource-constrained environments.
+        </p>
+        <a href="#">Group Members</a>
+      </div>
+  
+      <div class="project-card">
+        <h3 class="group-title">Underwater Imaging Group (Co-Led with Dr Xiaopeng Liu)</h3>
+        <p>
+          <span class="highlight">Underwater Object Detection:</span> Focuses on xxx
+          <span class="highlight">Underwater Image Enhancement:</span> Focuses on xxx
+        </p>
+        <a href="#">Group Members</a>
+      </div>
+  
+    </div>
+  </section>
+    
+ <!-- <section class="section" id="projects">
       <h2>Co-Lead Research Groups</h2>
 
       <div class="project-grid">
@@ -440,7 +465,7 @@ My research explores efficient, robust, and intelligent visual perception models
         </div>
 
       </div>
-    </section>
+    </section> -->
 
     
     <!-- <section class="section">
