@@ -277,11 +277,42 @@ body {
 
 /* Member Card */
 
-.member-grid {
+/* Co-Lead Research Groups: only this section uses one-column layout */
+.colead-grid {
+  grid-template-columns: 1fr;
+}
+
+/* Group title */
+.group-title {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+/* Member cards */
+.member-section {
+  margin-top: 18px;
+}
+
+.member-section-title {
+  margin: 14px 0 8px 0;
+  font-size: 16px;
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+.member-row {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
-  margin-top: 16px;
+  margin-bottom: 12px;
+}
+
+.leaders-row {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.students-row {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .member-card {
@@ -301,6 +332,14 @@ body {
   margin: 0;
   font-size: 13px;
   color: var(--muted);
+}
+
+/* Mobile layout */
+@media (max-width: 900px) {
+  .leaders-row,
+  .students-row {
+    grid-template-columns: 1fr;
+  }
 }
   
 
@@ -445,66 +484,104 @@ My research explores efficient, robust, and intelligent visual perception models
     </section>
 
 
-
-  <section class="section" id="research-groups">
-    <h2>Co-Lead Research Groups</h2>
-  
-    <div class="project-grid colead-grid">
-  
-      <div class="project-card">
-        <h3 class="group-title">Brain-Inspired Computing Group (Co-Led with Prof. Qi Xu)</h3>
-        <p>
-          <span class="highlight">Efficient AI:</span> Explores model pruning, compression, and lightweight architectures for deployment in resource-constrained environments.
-          <br>
-          <span class="highlight">Spiking Neural Networks:</span> Focuses on efficient learning, low-energy visual perception, and neuromorphic computing.
-        </p>
-  
-        <div class="member-grid">
-          <div class="member-card">
-            <h4>Prof. Qi Xu</h4>
-            <p>Co-Leader</p>
-          </div>
-  
-          <div class="member-card">
-            <h4>Long Chen</h4>
-            <p>Co-Leader</p>
-          </div>
-  
-          <div class="member-card">
-            <h4>Students</h4>
-            <p>PhD / MSc researchers</p>
-          </div>
-        </div>
-      </div>
-  
-      <div class="project-card">
-        <h3 class="group-title">Underwater Imaging Group (Co-Led with Dr Xiaopeng Liu)</h3>
-        <p>
-          <span class="highlight">Underwater Vision:</span> Focuses on robust visual perception in challenging underwater environments, including object detection, image enhancement, and scene understanding.
-          <br>
-          <span class="highlight">Underwater Robotics:</span> Explores perception-driven robotic systems for underwater inspection, navigation, and autonomous operation in complex marine environments.
-        </p>
-  
-        <div class="member-grid">
-          <div class="member-card">
-            <h4>Dr Xiaopeng Liu</h4>
-            <p>Co-Leader</p>
-          </div>
-  
-          <div class="member-card">
-            <h4>Long Chen</h4>
-            <p>Co-Leader</p>
-          </div>
-  
-          <div class="member-card">
-            <h4>Students</h4>
-            <p>PhD / MSc researchers</p>
+    <section class="section" id="research-groups">
+      <h2>Co-Lead Research Groups</h2>
+    
+      <div class="project-grid colead-grid">
+    
+        <div class="project-card">
+          <h3 class="group-title">Brain-Inspired Computing Group (Co-Led with Prof. Qi Xu)</h3>
+    
+          <p>
+            <span class="highlight">Efficient AI:</span> Explores model pruning, compression, and lightweight architectures for deployment in resource-constrained environments.
+            <br>
+            <span class="highlight">Spiking Neural Networks:</span> Focuses on efficient learning, low-energy visual perception, and neuromorphic computing.
+          </p>
+    
+          <div class="member-section">
+            <div class="member-section-title">Co-Leaders</div>
+    
+            <div class="member-row leaders-row">
+              <div class="member-card">
+                <h4>Prof. Qi Xu</h4>
+                <p>Co-Leader</p>
+              </div>
+    
+              <div class="member-card">
+                <h4>Long Chen</h4>
+                <p>Co-Leader</p>
+              </div>
+            </div>
+    
+            <div class="member-section-title">Students</div>
+    
+            <div class="member-row students-row">
+              <div class="member-card">
+                <h4>Student 1</h4>
+                <p>PhD / MSc Researcher</p>
+              </div>
+    
+              <div class="member-card">
+                <h4>Student 2</h4>
+                <p>PhD / MSc Researcher</p>
+              </div>
+    
+              <div class="member-card">
+                <h4>Student 3</h4>
+                <p>PhD / MSc Researcher</p>
+              </div>
+            </div>
           </div>
         </div>
+    
+        <div class="project-card">
+          <h3 class="group-title">Underwater Imaging Group (Co-Led with Dr Xiaopeng Liu)</h3>
+    
+          <p>
+            <span class="highlight">Underwater Vision:</span> Focuses on robust visual perception in challenging underwater environments, including object detection, image enhancement, and scene understanding.
+            <br>
+            <span class="highlight">Underwater Robotics:</span> Explores perception-driven robotic systems for underwater inspection, navigation, and autonomous operation in complex marine environments.
+          </p>
+    
+          <div class="member-section">
+            <div class="member-section-title">Co-Leaders</div>
+    
+            <div class="member-row leaders-row">
+              <div class="member-card">
+                <h4>Dr Xiaopeng Liu</h4>
+                <p>Co-Leader</p>
+              </div>
+    
+              <div class="member-card">
+                <h4>Long Chen</h4>
+                <p>Co-Leader</p>
+              </div>
+            </div>
+    
+            <div class="member-section-title">Students</div>
+    
+            <div class="member-row students-row">
+              <div class="member-card">
+                <h4>Student 1</h4>
+                <p>PhD / MSc Researcher</p>
+              </div>
+    
+              <div class="member-card">
+                <h4>Student 2</h4>
+                <p>PhD / MSc Researcher</p>
+              </div>
+    
+              <div class="member-card">
+                <h4>Student 3</h4>
+                <p>PhD / MSc Researcher</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
       </div>
-  
-    </div>
-  </section>
+    </section>
+ 
 
     <!-- 
   <section class="section" id="research-groups">
