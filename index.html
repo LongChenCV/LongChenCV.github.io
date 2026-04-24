@@ -2,108 +2,569 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Long Chen</title>
 
 <style>
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #222222;
+  --muted: #666666;
+  --primary: #1f6feb;
+  --primary-dark: #174ea6;
+  --border: #e5e7eb;
+  --tag-bg: #eef4ff;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 40px;
-  background: #f7f7f7;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
 }
 
-/* 整体布局 */
-.container {
-  display: flex;
-  max-width: 1100px;
+/* 顶部导航栏 */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  max-width: 1180px;
   margin: auto;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* 左侧栏 */
+.nav-title {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.nav-links a {
+  margin-left: 18px;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* 主体布局 */
+.wrapper {
+  max-width: 1180px;
+  margin: 36px auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 310px 1fr;
+  gap: 32px;
+}
+
+/* 左侧个人信息 */
 .sidebar {
-  width: 280px;
-  margin-right: 40px;
+  position: sticky;
+  top: 84px;
+  align-self: start;
+  background: var(--card);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
 }
 
-/* 头像 */
 .avatar {
   width: 180px;
+  height: 180px;
+  display: block;
+  object-fit: cover;
   border-radius: 50%;
+  margin: 0 auto 18px auto;
+  border: 4px solid #eef4ff;
 }
 
-/* 名字 */
 .name {
-  font-size: 22px;
-  font-weight: bold;
-  margin-top: 15px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 6px;
 }
 
-/* 信息 */
-.info {
-  color: #555;
-  margin-top: 10px;
-  line-height: 1.6;
+.position {
+  text-align: center;
+  color: var(--muted);
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+.profile-line {
+  margin: 10px 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.profile-line a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.profile-line a:hover {
+  text-decoration: underline;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.social-links a {
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: var(--tag-bg);
+  color: var(--primary-dark);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 /* 右侧内容 */
 .main {
-  flex: 1;
+  min-width: 0;
 }
 
-/* 标题 */
-h2 {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 5px;
+.hero {
+  background: linear-gradient(135deg, #ffffff 0%, #eef4ff 100%);
+  border-radius: 18px;
+  padding: 34px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  margin-bottom: 24px;
 }
 
+.hero h1 {
+  margin: 0 0 12px 0;
+  font-size: 34px;
+  line-height: 1.25;
+}
+
+.hero p {
+  color: var(--muted);
+  margin: 0;
+  font-size: 17px;
+}
+
+.section {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 28px 32px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.section h2 {
+  margin: 0 0 16px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  font-size: 26px;
+}
+
+.highlight {
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  background: var(--tag-bg);
+  color: var(--primary-dark);
+  padding: 8px 13px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* News */
+.news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.news-list li {
+  padding: 9px 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.news-list li:last-child {
+  border-bottom: none;
+}
+
+.date {
+  display: inline-block;
+  min-width: 82px;
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+/* 项目卡片 */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.project-card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  background: #fbfcff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(31, 111, 235, 0.12);
+}
+
+.project-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+}
+
+.project-card p {
+  margin: 0 0 10px 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.project-card a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Publications */
+.pub {
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px dashed var(--border);
+}
+
+.pub:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.pub-title {
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.pub-authors {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.pub-venue {
+  color: var(--primary-dark);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.pub-links a {
+  display: inline-block;
+  margin-right: 8px;
+  margin-top: 6px;
+  padding: 4px 9px;
+  border-radius: 6px;
+  background: var(--tag-bg);
+  color: var(--primary-dark);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* 页脚 */
+.footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 24px;
+  font-size: 14px;
+}
+
+/* 移动端适配 */
+@media (max-width: 900px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-inner {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav-links a {
+    margin: 0 8px;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<header class="navbar">
+  <div class="nav-inner">
+    <div class="nav-title">Long Chen</div>
+    <nav class="nav-links">
+      <a href="#bio">Bio</a>
+      <a href="#news">News</a>
+      <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- 左侧 -->
-  <div class="sidebar">
-    <img src="https://via.placeholder.com/180" class="avatar">
+<div class="wrapper">
+
+  <!-- Left Sidebar -->
+  <aside class="sidebar">
+    <!-- 建议把头像图片上传到仓库，例如 images/avatar.jpg，然后改成 src="images/avatar.jpg" -->
+    <img src="https://via.placeholder.com/180" alt="Long Chen" class="avatar">
 
     <div class="name">Long Chen</div>
-
-    <div class="info">
+    <div class="position">
       Researcher in AI<br>
-      Multimodal Learning<br>
-      Spiking Neural Networks<br><br>
-
-      📍 Imperial College London<br>
-      📧 chenlongcv@gmail; lchen6@ic.ac.uk<br>
-      💻 <a href="https://github.com/LongChenCV">GitHub</a>
+      Multimodal Learning & Spiking Neural Networks
     </div>
-  </div>
 
-  <!-- 右侧 -->
-  <div class="main">
+    <div class="profile-line">📍 Imperial College London</div>
+    <div class="profile-line">📧 chenlongcv@gmail.com</div>
+    <div class="profile-line">📧 lchen6@ic.ac.uk</div>
 
-    <h2>⭐ News</h2>
-    <ul>
-      <li>2026 - Homepage launched</li>
-      <li>2025 - Working on MMSNN</li>
-    </ul>
+    <div class="social-links">
+      <a href="https://github.com/LongChenCV" target="_blank">GitHub</a>
+      <a href="#" target="_blank">Google Scholar</a>
+      <a href="#" target="_blank">LinkedIn</a>
+      <a href="#" target="_blank">ORCID</a>
+    </div>
+  </aside>
 
-    <h2>Bio</h2>
-    <p>
-      I am working on spiking neural networks, multimodal fusion,
-      and underwater object detection.
-    </p>
+  <!-- Main Content -->
+  <main class="main">
 
-    <h2>Projects</h2>
-    <ul>
-      <li>MMSNN for underwater detection</li>
-      <li>Spike-driven attention model</li>
-    </ul>
+    <section class="hero">
+      <h1>Long Chen</h1>
+      <p>
+        I work on <span class="highlight">spiking neural networks</span>,
+        <span class="highlight">multimodal feature fusion</span>,
+        and <span class="highlight">underwater object detection</span>.
+        My research explores efficient, robust, and biologically inspired visual perception models.
+      </p>
+    </section>
 
-  </div>
+    <section class="section" id="bio">
+      <h2>Bio</h2>
+      <p>
+        I am a researcher in Artificial Intelligence, focusing on spiking neural networks,
+        multimodal learning, object detection, and efficient visual perception. My current work
+        investigates how spike-based models and multimodal representations can improve robustness
+        under challenging visual conditions such as underwater scenes, motion blur, low light,
+        and image degradation.
+      </p>
+      <p>
+        My research interests include spike-driven attention mechanisms, multimodal fusion of RGB
+        and texture-based features, lightweight object detection architectures, and energy-efficient
+        neural networks for real-world deployment.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Research Interests</h2>
+      <div class="tags">
+        <span class="tag">Spiking Neural Networks</span>
+        <span class="tag">Multimodal Learning</span>
+        <span class="tag">Underwater Object Detection</span>
+        <span class="tag">Computer Vision</span>
+        <span class="tag">Efficient AI</span>
+        <span class="tag">Feature Fusion</span>
+        <span class="tag">Attention Mechanisms</span>
+        <span class="tag">LBP-based Representation</span>
+      </div>
+    </section>
+
+    <section class="section" id="news">
+      <h2>⭐ News</h2>
+      <ul class="news-list">
+        <li><span class="date">2026</span> Homepage launched.</li>
+        <li><span class="date">2025</span> Working on MMSNN: Multi-Modal Spiking Neural Network for underwater object detection.</li>
+        <li><span class="date">2025</span> Developing spike-driven multi-axis self-attention models for efficient object detection.</li>
+        <li><span class="date">2025</span> Exploring multimodal fusion of RGB and LBP features for robust visual perception.</li>
+      </ul>
+    </section>
+
+    <section class="section" id="projects">
+      <h2>Projects</h2>
+
+      <div class="project-grid">
+
+        <div class="project-card">
+          <h3>MMSNN for Underwater Detection</h3>
+          <p>
+            A multi-modal spiking neural network designed for robust underwater object detection
+            by integrating RGB and texture-enhanced representations.
+          </p>
+          <a href="#">Project page</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Spike-driven Attention Model</h3>
+          <p>
+            An efficient object detection framework based on spike-driven multi-axis self-attention
+            and temporal feature modeling.
+          </p>
+          <a href="#">Project page</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Multimodal Feature Fusion</h3>
+          <p>
+            A feature fusion module combining deep RGB features and deep LBP features with
+            channel shuffle, group-wise fusion, and attention mechanisms.
+          </p>
+          <a href="#">Code</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Temporal Spike Modeling</h3>
+          <p>
+            A mixture-of-experts design for spike data across multiple temporal scales,
+            targeting motion blur, noise, and low-light conditions.
+          </p>
+          <a href="#">More details</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="publications">
+      <h2>Selected Publications</h2>
+
+      <div class="pub">
+        <div class="pub-title">
+          MMSNN: Multi-Modal Spiking Neural Network for Underwater Object Detection
+        </div>
+        <div class="pub-authors">
+          Long Chen, Co-authors
+        </div>
+        <div class="pub-venue">
+          Manuscript / Under Review
+        </div>
+        <div class="pub-links">
+          <a href="#">Paper</a>
+          <a href="#">Code</a>
+          <a href="#">BibTeX</a>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">
+          Spike-driven Multi-axis Self-attention for Efficient Object Detection
+        </div>
+        <div class="pub-authors">
+          Long Chen, Co-authors
+        </div>
+        <div class="pub-venue">
+          Manuscript / Under Review
+        </div>
+        <div class="pub-links">
+          <a href="#">Paper</a>
+          <a href="#">Code</a>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">
+          Multimodal Fusion of RGB and LBP Features for Robust Visual Recognition
+        </div>
+        <div class="pub-authors">
+          Long Chen, Co-authors
+        </div>
+        <div class="pub-venue">
+          Research Project
+        </div>
+        <div class="pub-links">
+          <a href="#">Paper</a>
+          <a href="#">Code</a>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="section">
+      <h2>Awards and Honours</h2>
+      <ul>
+        <li>2026: Homepage launched.</li>
+        <li>2025: Research on multimodal spiking neural networks for underwater object detection.</li>
+        <li>2025: Research on efficient spike-driven attention models.</li>
+      </ul>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <p>
+        I am open to academic collaboration and research discussion in spiking neural networks,
+        multimodal learning, and computer vision.
+      </p>
+      <p>
+        📧 Email: <a href="mailto:chenlongcv@gmail.com">chenlongcv@gmail.com</a><br>
+        📧 Email: <a href="mailto:lchen6@ic.ac.uk">lchen6@ic.ac.uk</a><br>
+        💻 GitHub: <a href="https://github.com/LongChenCV" target="_blank">https://github.com/LongChenCV</a>
+      </p>
+    </section>
+
+  </main>
 
 </div>
+
+<footer class="footer">
+  © 2026 Long Chen. Powered by GitHub Pages.
+</footer>
 
 </body>
 </html>
