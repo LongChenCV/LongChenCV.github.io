@@ -275,6 +275,35 @@ body {
   font-weight: 600;
 }
 
+/* Member Card */
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.member-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  background: #ffffff;
+}
+
+.member-card h4 {
+  margin: 0 0 4px 0;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.member-card p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+  
+
 /* Publications */
 .pub {
   margin-bottom: 18px;
@@ -410,10 +439,12 @@ My research explores efficient, robust, and intelligent visual perception models
       <p>
       I am a researcher at Imperial College London, supported by Prof. Declan O’Regan and Prof. Wenjia Bai. Previously, I was a Research Fellow at University College London, and I received my PhD from the University of Leicester.
 
-      My research interests lie in AI and computational imaging, with a particular focus on medical imaging and underwater imaging. I also co-lead two research groups: the Brain-Inspired Computing Group, co-lead with Prof. Qi Xu at Dalian University of Technology since 2023, and the Underwater Imaging Group, co-lead with Prof. Xiaopeng Liu at Shandong University of Science and Technology since 2023.
+      My research interests lie in AI and computational imaging, with a particular focus on medical imaging and underwater imaging. I also co-lead two research groups: the Brain-Inspired Computing Group, co-lead with Prof. Qi Xu at Dalian University of Technology since 2023, and the Underwater Imaging Group, co-lead with Dr Xiaopeng Liu at Shandong University of Science and Technology since 2023.
       </p>
       
     </section>
+
+
 
   <section class="section" id="research-groups">
     <h2>Co-Lead Research Groups</h2>
@@ -423,9 +454,70 @@ My research explores efficient, robust, and intelligent visual perception models
       <div class="project-card">
         <h3 class="group-title">Brain-Inspired Computing Group (Co-Led with Prof. Qi Xu)</h3>
         <p>
-          <span class="highlight">Spiking Neural Networks:</span> Focuses on efficient learning, low-energy visual perception, and neuromorphic computing.
-          <br>
           <span class="highlight">Efficient AI:</span> Explores model pruning, compression, and lightweight architectures for deployment in resource-constrained environments.
+          <br>
+          <span class="highlight">Spiking Neural Networks:</span> Focuses on efficient learning, low-energy visual perception, and neuromorphic computing.
+        </p>
+  
+        <div class="member-grid">
+          <div class="member-card">
+            <h4>Prof. Qi Xu</h4>
+            <p>Co-Leader</p>
+          </div>
+  
+          <div class="member-card">
+            <h4>Long Chen</h4>
+            <p>Co-Leader</p>
+          </div>
+  
+          <div class="member-card">
+            <h4>Students</h4>
+            <p>PhD / MSc researchers</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="project-card">
+        <h3 class="group-title">Underwater Imaging Group (Co-Led with Dr Xiaopeng Liu)</h3>
+        <p>
+          <span class="highlight">Underwater Vision:</span> Focuses on robust visual perception in challenging underwater environments, including object detection, image enhancement, and scene understanding.
+          <br>
+          <span class="highlight">Underwater Robotics:</span> Explores perception-driven robotic systems for underwater inspection, navigation, and autonomous operation in complex marine environments.
+        </p>
+  
+        <div class="member-grid">
+          <div class="member-card">
+            <h4>Dr Xiaopeng Liu</h4>
+            <p>Co-Leader</p>
+          </div>
+  
+          <div class="member-card">
+            <h4>Long Chen</h4>
+            <p>Co-Leader</p>
+          </div>
+  
+          <div class="member-card">
+            <h4>Students</h4>
+            <p>PhD / MSc researchers</p>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+
+    <!-- 
+  <section class="section" id="research-groups">
+    <h2>Co-Lead Research Groups</h2>
+  
+    <div class="project-grid colead-grid">
+  
+      <div class="project-card">
+        <h3 class="group-title">Brain-Inspired Computing Group (Co-Led with Prof. Qi Xu)</h3>
+        <p>
+          <span class="highlight">Efficient AI:</span> Explores model pruning, compression, and lightweight architectures for deployment in resource-constrained environments.
+          <br>
+          <span class="highlight">Spiking Neural Networks:</span> Focuses on efficient learning, low-energy visual perception, and neuromorphic computing.
         </p>
         <a href="#">Group Members</a>
       </div>
@@ -441,48 +533,10 @@ My research explores efficient, robust, and intelligent visual perception models
       </div>
   
     </div>
-  </section>
+  </section> -->
     
- <!-- <section class="section" id="projects">
-      <h2>Co-Lead Research Groups</h2>
-
-      <div class="project-grid">
-
-        <div class="project-card">
-          <h3 class="group-title">Brain-Inspired Computing Group (Co-Led with Prof. Qi Xu)</h3>
-          <p>
-             <span class="highlight">Spiking Neural Networks:</span> Focuses on efficient learning, low-energy visual perception, and neuromorphic computing.
-             <span class="highlight">Efficient AI:</span> Explores model pruning, compression, and lightweight architectures for deployment in resource-constrained environments.
-          </p>
-          <a href="#">Group Members</a>
-        </div>
-    
-        <div class="project-card">
-          <h3 class="group-title">Underwater Imaging Group (Co-Led with Dr Xiaopeng Liu)</h3>
-          <p>
-             <span class="highlight">Underwater Object Detection:</span> Fouces on xxx
-             <span class="highlight">Underwater Image Enhancement:</span> Fouces on xxx
-          </p>
-          <a href="#">Group Members</a>
-        </div>
-
-      </div>
-    </section> -->
 
     
-    <!-- <section class="section">
-      <h2>Research Interests</h2>
-      <div class="tags">
-        <span class="tag">Spiking Neural Networks</span>
-        <span class="tag">Multimodal Learning</span>
-        <span class="tag">Underwater Object Detection</span>
-        <span class="tag">Computer Vision</span>
-        <span class="tag">Efficient AI</span>
-        <span class="tag">Feature Fusion</span>
-        <span class="tag">Attention Mechanisms</span>
-        <span class="tag">LBP-based Representation</span>
-      </div>
-    </section> -->
 
     <section class="section" id="news">
       <h2>⭐ News</h2>
