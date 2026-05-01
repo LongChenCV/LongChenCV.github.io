@@ -403,6 +403,112 @@ body {
   font-weight: 600;
 }
 
+
+
+
+
+/* Photos flowing carousel */
+.photo-section {
+  background: #f1f3f7;
+  border-radius: 18px;
+  padding: 42px 0 36px 0;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.photo-section h2 {
+  text-align: center;
+  font-size: 42px;
+  margin: 0 0 34px 0;
+  color: var(--text);
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.photo-marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.photo-track {
+  display: flex;
+  gap: 36px;
+  width: max-content;
+  animation: photoScroll 38s linear infinite;
+}
+
+.photo-marquee:hover .photo-track {
+  animation-play-state: paused;
+}
+
+.photo-card {
+  flex: 0 0 320px;
+  text-align: center;
+}
+
+.photo-card img {
+  width: 320px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  display: block;
+}
+
+.photo-card p {
+  margin: 12px 0 0 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.35;
+}
+
+@keyframes photoScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile photos */
+@media (max-width: 900px) {
+  .photo-section {
+    padding: 34px 0 28px 0;
+  }
+
+  .photo-section h2 {
+    font-size: 34px;
+    margin-bottom: 26px;
+  }
+
+  .photo-track {
+    gap: 22px;
+    animation-duration: 30s;
+  }
+
+  .photo-card {
+    flex-basis: 260px;
+  }
+
+  .photo-card img {
+    width: 260px;
+    height: 195px;
+  }
+
+  .photo-card p {
+    font-size: 15px;
+  }
+}
+
+
+
+  
+
 /* 页脚 */
 .footer {
   text-align: center;
@@ -503,7 +609,7 @@ My research explores efficient, robust, and intelligent visual perception models
 
 
 
-    <section class="section" id="research-groups">
+    <section class="section" id="research-topics">
       <h2>Research Topics</h2>
 
       <div class="project-grid colead-grid">
@@ -1107,6 +1213,9 @@ My research explores efficient, robust, and intelligent visual perception models
       </ul>
     </section>
 
+
+
+    
     <section class="section" id="contact">
       <h2>Contact</h2>
       <p>
@@ -1118,6 +1227,84 @@ My research explores efficient, robust, and intelligent visual perception models
         <!-- 💻 GitHub: <a href="https://github.com/LongChenCV" target="_blank">https://github.com/LongChenCV</a> -->
       </p>
     </section>
+
+
+    <section class="photo-section" id="photos">
+      <h2>Photos</h2>
+    
+      <div class="photo-marquee">
+        <div class="photo-track">
+    
+          <!-- 第一组照片 -->
+          <div class="photo-card">
+            <img src="images/photo1.jpg" alt="ECCV 2024">
+            <p>ICL CCIG Group</p>
+          </div>
+    
+          <div class="photo-card">
+            <img src="images/photo2.jpg" alt="AI Textbook Launch">
+            <p>Declan's Birthday</p>
+          </div>
+    
+          <div class="photo-card">
+            <img src="images/photo3.jpg" alt="SAM Visit Shandong University">
+            <p>Our Board Game</p>
+          </div>
+    
+          <div class="photo-card">
+            <img src="images/photo4.jpg" alt="Academic Visit">
+            <p>UCL WEISS Retreat</p>
+          </div>
+    
+          <div class="photo-card">
+            <img src="images/photo5.jpg" alt="Research Group">
+            <p>Brain-Inspired Computing Group</p>
+          </div>
+
+          <div class="photo-card">
+            <img src="images/photo5.jpg" alt="Research Group">
+            <p>Underwater Imaging Group</p>
+          </div>
+
+        
+    
+          <!-- 第二组照片：复制一遍，用于无缝循环 -->
+          <div class="photo-card">
+            <img src="images/photo1.jpg" alt="ECCV 2024">
+            <p>ICL CCIG Group</p>
+          </div>
+    
+          <div class="photo-card">
+            <img src="images/photo2.jpg" alt="AI Textbook Launch">
+            <p>Declan's Birthday</p>
+          </div>
+    
+          <div class="photo-card">
+            <img src="images/photo3.jpg" alt="SAM Visit Shandong University">
+            <p>Our Board Game</p>
+          </div>
+    
+          <div class="photo-card">
+            <img src="images/photo4.jpg" alt="Academic Visit">
+            <p>UCL WEISS Retreat</p>
+          </div>
+    
+          <div class="photo-card">
+            <img src="images/photo5.jpg" alt="Research Group">
+            <p>Brain-Inspired Computing Group</p>
+          </div>
+
+          <div class="photo-card">
+            <img src="images/photo5.jpg" alt="Research Group">
+            <p>Underwater Imaging Group</p>
+          </div>
+    
+        </div>
+      </div>
+    </section>
+
+
+    
 
   </main>
 
